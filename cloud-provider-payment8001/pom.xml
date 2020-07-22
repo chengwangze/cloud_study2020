@@ -13,6 +13,11 @@
 
 
     <dependencies>
+        <!--  eureka-client  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!--  导入仓库中自己的实体类  -->
         <dependency>
             <groupId>org.example.springcloud</groupId>
@@ -25,7 +30,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--监控-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -39,7 +43,6 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <!--如果没写版本,从父层面找,找到了就直接用,全局统一-->
             <version>1.1.10</version>
         </dependency>
 
