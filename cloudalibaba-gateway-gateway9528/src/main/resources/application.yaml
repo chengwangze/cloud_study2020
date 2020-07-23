@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: cloud-gateway-gateway9528
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        # 开启通过服务名找服务
+        locator:
+          enabled: true
+      routes:
+        - id: payment_routh
+          #uri: http://localhost:8001
+          uri: lb://nacos-service-provider
+          predicates:
+            - Path=/payment/port/**
+
+server:
+  port: 9528
+logging:
+  file:
+    path: D:/log
