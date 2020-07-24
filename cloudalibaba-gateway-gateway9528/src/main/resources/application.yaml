@@ -6,16 +6,24 @@ spring:
       discovery:
         server-addr: localhost:8848
     gateway:
-      discovery:
-        # 开启通过服务名找服务
-        locator:
-          enabled: true
+#      discovery:
+      #        # 开启通过服务名找服务
+      #        locator:
+      #          enabled: true
       routes:
         - id: payment_routh
           #uri: http://localhost:8001
           uri: lb://nacos-service-provider
           predicates:
             - Path=/payment/port/**
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
 
 server:
   port: 9528
