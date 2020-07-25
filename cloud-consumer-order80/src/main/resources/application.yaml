@@ -3,10 +3,10 @@ server:
 
 
 spring:
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
+#  cloud:
+  #    loadbalancer:
+  #      ribbon:
+  #        enabled: false
   application:
     name: cloud-order-service
 eureka:
